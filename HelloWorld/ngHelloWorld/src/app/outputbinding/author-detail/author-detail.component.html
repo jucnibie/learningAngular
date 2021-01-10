@@ -1,0 +1,5 @@
+<div class="author-detail" *ngIf="author">
+  <strong>{{ author.firstName }} {{ author.lastName }}</strong>
+  <button (click)="selectme.emit(author)">Select</button>
+  <button (click)="handleDelete()">Delete</button>
+</div>

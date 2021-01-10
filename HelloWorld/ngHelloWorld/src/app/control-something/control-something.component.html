@@ -1,0 +1,38 @@
+<h2>control-something works!</h2>
+<div class="control-handle">
+  <strong>Change your handle: </strong>
+  <input [(ngModel)]="newhandle" id="newHandle" type="text">
+  <button (click)="changeHandle()">Change Now</button>
+</div>
+
+<div class="control-card">
+  <div>
+    <strong>Show card:</strong>
+    <input [(ngModel)]="isStaff" type="checkbox">
+  </div>
+
+  <div *ngIf="isStaff" class="card">
+    <img alt="John" src="http://bit.do/dsafdsafasdf" style="width:100%">
+    <h1>{{ user.name }}</h1>
+    <p class="title">{{ user.handle }}</p>
+    <p>
+      <button id="contact">Contact</button>
+    </p>
+  </div>
+</div>
+
+<div class="control-18content">
+  <h3>Show Yua Mikami</h3>
+  <button (click)="isAdult= isAdult - 1">-</button>
+  Age: <strong>{{ isAdult }}</strong>
+  <button (click)="isAdult= isAdult + 1">+</button>
+
+  <br>
+
+  <div *ngIf="isAdult >= 18; else under18">
+    <img alt="Yua" src="http://bit.do/fdsgdgsd">
+  </div>
+  <ng-template #under18>
+    <p><strong>You are too young to meet Yua Mikami.</strong></p>
+  </ng-template>
+</div>

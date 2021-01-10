@@ -1,0 +1,39 @@
+<h2>custom-twoway-binding works!</h2>
+<strong>Text: {{ message }} </strong>
+
+<div class="form-input">
+  <div>
+    <label for="one">Two-way: </label>
+    <input type="text" #inputElement id="one" [(ngModel)]="message">
+  </div>
+  <div>
+    <label for="two">Property & Event: </label>
+    <input type="text" id="two" [ngModel]="message" (ngModelChange)="message = $event">
+  </div>
+</div>
+
+<app-toggle [isChecked]="checked"></app-toggle>
+<app-toggle #toggleComp ></app-toggle>
+<app-toggle #toggleComp ></app-toggle>
+<app-toggle #toggleComp ></app-toggle>
+
+<button (click)="toggleComp.onCheck()">Toggle ME</button><br>
+<button (click)="toggleInside()">Toggle inside class</button>
+
+<div #toggleContainer></div>
+
+<h3>Content Projection!</h3>
+<app-toggle [isChecked]="isChecks.one">
+  <h3 class="header">Header 1</h3>
+  <label>Toggle 1</label>
+  <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+</app-toggle>
+<app-toggle [isChecked]="isChecks.two">
+  <h3 class="header">Header 2</h3>
+  <div ngProjectAs="toggle-label">Toggle 2</div>
+  <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+</app-toggle>

@@ -1,0 +1,9 @@
+<h2>inputbinding works!</h2>
+<button (click)="progress = progress - 1">Decrease Progress</button> {{ progress }}
+<button (click)="progress = progress + 1">Increase Progress</button>
+<div class="progressbar-container" [style.backgroundColor]="backgroundColor">
+  <div class="progress" [style]="{
+  backgroundColor: progressColor,
+  width: progress + '%'
+  }"></div>
+</div>

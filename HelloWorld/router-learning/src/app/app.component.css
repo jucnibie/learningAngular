@@ -1,0 +1,29 @@
+/* import section */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 20px;
+    color: white;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
+nav {
+    background-color: #40a8c4;
+    padding: 10px 20px;
+}
+
+.selected {
+    background-color: #07689f;
+}

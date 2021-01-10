@@ -1,0 +1,16 @@
+<h2>data-event-binding works!</h2>
+<div class="data-event-binding">
+  <button (click)="handler($event)">Click me to show on console log.</button>
+  <h4>{{ sometext }}</h4>
+  <div>
+    <img alt="DataEventbind"
+         src="https://angular.io/generated/images/guide/architecture/databinding.png" style="border: 2px solid dodgerblue">
+    <br>
+    <strong>One-way Binding: </strong>
+    <input (ngModelChange)="sometext = $event" [ngModel]="sometext" type="text">
+  </div>
+  <div>
+    <strong>Two-way Binding: </strong>
+    <input [(ngModel)]="sometext" type="text">
+  </div>
+</div>

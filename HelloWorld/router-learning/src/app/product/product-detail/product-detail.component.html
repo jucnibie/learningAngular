@@ -1,0 +1,14 @@
+<p>product-detail works!</p>
+<div class="detail" *ngIf="product">
+    <h2>{{ product.name }}</h2>
+    <a [routerLink]="['/products', product.id, 'edit']">Edit</a>
+    <div class="img-product">
+        <img [src]="product.imageUrl" alt="{{ product.name }}">
+    </div>
+    <div class="price">
+        <strong>{{ product.price | currency }}</strong>
+    </div>
+    <div class="detail-footer">
+        <button (click)="backToList()">Back to List Products</button>
+    </div>
+</div>

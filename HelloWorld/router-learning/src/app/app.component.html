@@ -1,0 +1,19 @@
+<div class="header">
+    <h1>{{ title }}</h1>
+</div>
+
+<nav class="navbar">
+    <a routerLink='/home'
+    routerLinkActive='selected'
+    [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a [routerLink]="['/about']" routerLinkActive='selected'>About</a>
+    <a [routerLink]="['/products']"
+    routerLinkActive='selected'
+    [routerLinkActiveOptions]="{ exact: true }">Products</a>
+    <a>
+        <button (click)="login()">Login</button>
+        <button (click)="logout()">Logout</button>
+    </a>
+</nav>
+
+<router-outlet></router-outlet>

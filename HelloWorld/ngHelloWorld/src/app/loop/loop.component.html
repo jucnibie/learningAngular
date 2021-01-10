@@ -1,0 +1,23 @@
+<h2>loop works!</h2>
+<div class="posts-one">
+  <ul>
+    <li *ngFor="let post of posts; index as idx; count as total; first as isFirst; last as isLast; even as isEven; odd as isOdd">
+        <span>
+        <h4>{{ post.title }}</h4> - {{ idx }} of {{ total }}
+        </span>
+      <span>{{ post.body | summary:10 }}</span>
+      <p>{{ isEven ? "Even number" : "Odd number"}}</p>
+      <p *ngIf="isFirst">First number.</p>
+      <p *ngIf="isLast">Last number.</p>
+    </li>
+  </ul>
+</div>
+
+<div class="posts-two">
+  <ng-template ngFor let-post [ngForOf]="posts" let-i='index'>
+    <div class="post">
+      <strong>{{ post.title }}</strong>
+      <p>{{ post.body }}</p>
+    </div>
+  </ng-template>
+</div>

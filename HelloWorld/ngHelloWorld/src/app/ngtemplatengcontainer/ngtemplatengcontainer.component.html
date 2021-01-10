@@ -1,0 +1,18 @@
+<p>ngtemplatengcontainer works!</p>
+<h3>Recursive List</h3>
+
+<ul>
+  <ng-container *ngTemplateOutlet="recursiveLinks; context: {items_var: links}"></ng-container>
+</ul>
+
+<!--ng-templates include ng-container for re-usable templates, element in angular-->
+<!--items_var is a parameter for ng-templates-->
+<ng-template #recursiveLinks let-items='items_var'>
+  <li *ngFor="let item of items">
+    {{ item.title }}
+    <ul *ngIf="item.children.length > 0">
+      <ng-container *ngTemplateOutlet="recursiveLinks; context: {items_var: item.children}"></ng-container>
+    </ul>
+  </li>
+</ng-template>
+

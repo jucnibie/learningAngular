@@ -1,0 +1,16 @@
+<p>toggle works!</p>
+<header>
+  <ng-content select=".header"></ng-content>
+</header>
+<div class="toggle-wrapper" [class.checked]="isChecked" (click)="onCheck()">
+  <div class="toggle"></div>
+</div>
+<div class="toggle-label">
+  <ng-content select="label, .toggle-label, span"></ng-content>
+</div>
+<div class="toggle-content">
+  <ng-content></ng-content>
+</div>
+<p>
+  Design by: <a href="https://dribbble.com/shots/4707036-Switcher-XXXVIII" target="_blank">Oleg Frolov</a>
+</p>
