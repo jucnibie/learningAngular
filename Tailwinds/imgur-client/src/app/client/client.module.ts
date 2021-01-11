@@ -8,9 +8,12 @@ import { ClientComponent } from './client.component';
  * Ant Design
  */
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+
 
 const antModule = [
-  NzButtonModule
+  NzButtonModule,
+  NzLayoutModule
 ];
 
 @NgModule({
