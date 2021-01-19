@@ -5,7 +5,17 @@ import { ClientComponent } from './client.component';
 const routes: Routes = [
   {
     path: '',
-    component: ClientComponent
+    component: ClientComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'album'
+      },
+      {
+        path: 'album',
+        loadChildren: () => import('./album/album.module').then(m => m.AlbumModule)
+      }
+    ]
   }
 ];
 
